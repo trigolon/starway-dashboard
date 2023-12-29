@@ -16,11 +16,37 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'username' => 'admin',
-            'firstname' => 'Admin',
-            'lastname' => 'Admin',
-            'email' => 'admin@argon.com',
-            'password' => bcrypt('secret')
+            'username' => 'ale',
+            'firstname' => 'Ale',
+            'lastname' => 'Liu',
+            'email' => 'liuchen.alejandro@gmail.com',
+            'password' => bcrypt('1505')
+        ]);
+
+        DB::table('employees')->insert([
+            'name' => 'Harry',
+            'is_active' => true,
+            'date_joined' => '2021-01-01',
+        ]);
+
+        DB::table('employees')->insert([
+            'name' => 'Erik',
+            'is_active' => true,
+            'date_joined' => '2021-01-01',
+        ]);
+
+        DB::table('attendances')->insert([
+            'employee_id' => 1,
+            'clock_in' => '2021-01-01 08:00:00',
+            'clock_out' => '2021-01-01 17:00:00',
+            'is_absent' => false,
+        ]);
+
+        DB::table('attendances')->insert([
+            'employee_id' => 2,
+            'clock_in' => '2021-01-02 08:00:00',
+            'clock_out' => '2021-01-02 17:00:00',
+            'is_absent' => false,
         ]);
     }
 }
