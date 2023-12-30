@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Employee;
+use App\Models\Attendance;
+
 class PageController extends Controller
 {
     /**
@@ -20,7 +23,7 @@ class PageController extends Controller
 
         return abort(404);
     }
-
+    
     public function vr()
     {
         return view("pages.virtual-reality");

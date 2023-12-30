@@ -10,8 +10,12 @@ class AttendancesController extends Controller
 {
     public function show()
     {
-        /* $today_attendance = Attendance::with('employee')->where('date', date('Y-m-d'))->get(); */
-        $today_attendance = 'asd';
-        return view('pages.attendance', ['asd' => $today_attendance]);
+        $targetDate = '2021-01-01';
+
+        $attendance = Attendance::with('employee')
+            ->whereDate('clock_in', $targetDate)
+            ->get();
+
+        return view('sections.attendance', ['attendance' => $attendance]);
     }
 }
